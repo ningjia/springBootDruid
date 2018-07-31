@@ -1,0 +1,41 @@
+buildscript {
+	ext {
+		springBootVersion = '1.5.15.RELEASE'
+	}
+	repositories {
+		mavenCentral()
+	}
+	dependencies {
+		classpath("org.springframework.boot:spring-boot-gradle-plugin:${springBootVersion}")
+	}
+}
+
+apply plugin: 'java'
+apply plugin: 'eclipse'
+apply plugin: 'org.springframework.boot'
+
+group = 'com.example'
+version = '0.0.1-SNAPSHOT'
+sourceCompatibility = 1.8
+
+repositories {
+	mavenCentral()
+}
+
+
+dependencies {
+	//WEB
+	compile('org.springframework.boot:spring-boot-starter-web')
+	//MySql
+	runtime('mysql:mysql-connector-java')
+	//JPA
+//	compile('org.springframework.boot:spring-boot-starter-data-jpa')
+	//JDBC
+	compile group: 'org.springframework.boot', name: 'spring-boot-starter-jdbc', version: '1.5.6.RELEASE'
+	//Druid
+	compile ('com.alibaba:druid:1.0.26')
+	//LOMBOK
+	compileOnly('org.projectlombok:lombok')
+	//TEST
+	testCompile('org.springframework.boot:spring-boot-starter-test')
+}
