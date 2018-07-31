@@ -40,7 +40,7 @@ public class DruidConfiguration {
         ServletRegistrationBean servletRegistrationBean = new ServletRegistrationBean(new StatViewServlet(),"/druid/*");
 
         //添加初始化参数：initParams
-        //白名单：
+        //IP白名单 (没有配置或者为空，则允许所有访问)
         servletRegistrationBean.addInitParameter("allow","127.0.0.1");
         //IP黑名单 (存在共同时，deny优先于allow) : 如果满足deny的话提示:Sorry, you are not permitted to view this page.
         servletRegistrationBean.addInitParameter("deny","192.168.1.73");
@@ -64,7 +64,7 @@ public class DruidConfiguration {
         //添加过滤规则.
         filterRegistrationBean.addUrlPatterns("/*");
 
-        //添加不需要忽略的格式信息.
+        //过滤不需要监控的后缀
         filterRegistrationBean.addInitParameter("exclusions","*.js,*.gif,*.jpg,*.png,*.css,*.ico,/druid/*");
         return filterRegistrationBean;
     }
