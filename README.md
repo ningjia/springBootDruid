@@ -91,7 +91,8 @@ public class DruidConfiguration {
 ```
 
 ### 监控
-[http://localhost:8080/druid](http://localhost:8080/druid)
+- [http://localhost:8080/druid](http://localhost:8080/项目名称/druid)
+- 账号/密码在DruidConfiguration.druidStatViewServlet()中配置
 
 ## Refer
 - [springBoot整合之整合阿里druid数据库连接池](https://blog.csdn.net/CoffeeAndIce/article/details/78707819)
