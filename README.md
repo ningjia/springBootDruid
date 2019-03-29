@@ -40,6 +40,14 @@ spring.datasource.connectionProperties=druid.stat.mergeSql=true;druid.stat.slowS
 # 合并多个DruidDataSource的监控数据
 #spring.datasource.useGlobalDataSourceStat=true
 ```
+关于数据库的配置信息（如下所示），也可以写在'applocation.properties'文件中；其余druid的配置内容，保留在'druid.properties'文件中。
+```
+#数据库设置
+spring.datasource.driverClassName=com.mysql.jdbc.Driver
+spring.datasource.url=jdbc:mysql://localhost:3306/uu_core?useUnicode=true&characterEncoding=utf8&autoReconnect=true&useSSL=true
+spring.datasource.username=root
+spring.datasource.password=root
+```
 ### 实例化Druid Datasource
 ```java
 @Configuration
